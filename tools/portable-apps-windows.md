@@ -1,3 +1,5 @@
+<!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
+<!-- diskwise-meta: {"last_verified":"2026-02-20T04:52:54Z","verify_count":1,"fail_count":0} -->
 # Portable Applications (Windows)
 
 Portable apps are self-contained applications that run without system-level installation, commonly used on restricted Windows environments.
