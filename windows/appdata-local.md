@@ -1,4 +1,5 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
+<!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":1} -->
 # AppData/Local Directory (Windows)
 
 The `~/AppData/Local/` directory contains application caches, settings, and local data for Windows applications.
