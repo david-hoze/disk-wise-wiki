@@ -1,3 +1,5 @@
+<!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
+<!-- diskwise-meta: {"last_verified":"2026-02-20T04:09:08Z","verify_count":1,"fail_count":0} -->
 # GHCup
 
 GHCup is the Haskell toolchain installer. It manages GHC, cabal-install, HLS, and Stack versions.
