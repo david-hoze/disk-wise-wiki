@@ -1,5 +1,5 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-<!-- diskwise-meta: {"last_verified":"2026-02-20T04:07:54Z","verify_count":1,"fail_count":0} -->
+<!-- diskwise-meta: {"last_verified":"2026-02-20T04:08:45Z","verify_count":1,"fail_count":0} -->
 # Portable Haskell (Windows)
 
 A self-contained Haskell development environment for Windows, typically bundling GHCup, Cabal, and an MSYS2 environment.
