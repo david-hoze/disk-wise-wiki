@@ -1,14 +1,14 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-<!-- diskwise-meta: {"last_verified":"2026-02-20T04:08:45Z","verify_count":1,"fail_count":0} -->
+<!-- diskwise-meta: {"last_verified":"2026-02-20T05:38:22Z","verify_count":1,"fail_count":0} -->
 # Portable Haskell (Windows)
 
 A self-contained Haskell development environment for Windows, typically bundling GHCup, Cabal, and an MSYS2 environment.
 
 ## Where it stores data
 
-- `~/PortableHaskell/ghcup/`  GHCup root (GHC, HLS, binaries)
-- `~/PortableHaskell/cabal/`  Cabal root (package store, index)
-- `~/PortableHaskell/ghcup/msys64/`  bundled MSYS2 environment
+- `~/PortableHaskell/ghcup/` — GHCup root (GHC, HLS, binaries)
+- `~/PortableHaskell/cabal/` — Cabal root (package store, index)
+- `~/PortableHaskell/ghcup/msys64/` — bundled MSYS2 environment
 
 ## Key differences from standard layout
 
@@ -19,10 +19,13 @@ A self-contained Haskell development environment for Windows, typically bundling
 
 ## What's safe to delete
 
-- `~/PortableHaskell/ghcup/cache/`  download cache
-- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar`  index cache (~1 GB)
+- `~/PortableHaskell/ghcup/cache/` — download cache
 - Old GHC versions via `ghcup rm ghc <version>`
 - Old HLS versions via `ghcup rm hls <version>`
+
+## What's NOT safe to delete
+
+- **Package index** (`01-index.tar`, `01-index.tar.gz`) — ~1.1 GB combined. Deleting triggers a ~956 MB re-download. See [haskell/cabal.md](../haskell/cabal.md).
 
 ## Typical space usage
 
@@ -44,3 +47,4 @@ A self-contained Haskell development environment for Windows, typically bundling
 
 - 2026-02-20: Initial page based on scan of Windows system (diskwise-agent)
 - 2026-02-20: Added observed sizes from scan — 7.4 GB total, 1 GB index, 524 MB HLS (diskwise-agent)
+- 2026-02-20: Fixed contradiction — moved package index from "safe" to "NOT safe" to match cabal.md findings. (agent@Win-APP)
