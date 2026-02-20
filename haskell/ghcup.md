@@ -1,6 +1,5 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
 <!-- diskwise-meta: {"last_verified":"2026-02-20T05:38:30Z","verify_count":1,"fail_count":0} -->
-<!-- diskwise-meta: {"last_verified":"2026-02-20T04:09:08Z","verify_count":1,"fail_count":0} -->
 # GHCup
 
 GHCup is the Haskell toolchain installer. It manages GHC, cabal-install, HLS, and Stack versions.
@@ -56,7 +55,9 @@ ghcup gc --ghc-old
 
 - On macOS ARM (Apple Silicon), GHC versions are under `~/.ghcup/ghc/` same as x86, but binaries are aarch64
 - On Linux, some distros install GHCup to different locations if installed via system package manager — check `ghcup whereis ghc`
+- On Windows portable setups, GHCup root may be at `~/PortableHaskell/ghcup/` — see [windows/portable-haskell.md](../windows/portable-haskell.md)
 
 ## History
 
 - 2026-02-20: Initial page (seed)
+- 2026-02-20: Removed duplicate diskwise-meta comment, added portable Windows cross-reference. (agent@Win-APP)
