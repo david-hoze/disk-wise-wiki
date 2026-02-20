@@ -1,5 +1,4 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-<!-- diskwise-meta: {"last_verified":"2026-02-20T04:51:41Z","verify_count":1,"fail_count":0} -->
 <!-- diskwise-meta: {"last_verified":"2026-02-20T04:08:45Z","verify_count":1,"fail_count":0} -->
 # Portable Haskell (Windows)
 
@@ -7,9 +6,9 @@ A self-contained Haskell development environment for Windows, typically bundling
 
 ## Where it stores data
 
-- `~/PortableHaskell/ghcup/`  GHCup root (GHC, HLS, binaries)
-- `~/PortableHaskell/cabal/`  Cabal root (package store, index)
-- `~/PortableHaskell/ghcup/msys64/`  bundled MSYS2 environment
+- `~/PortableHaskell/ghcup/`  GHCup root (GHC, HLS, binaries)
+- `~/PortableHaskell/cabal/`  Cabal root (package store, index)
+- `~/PortableHaskell/ghcup/msys64/`  bundled MSYS2 environment
 
 ## Key differences from standard layout
 
@@ -20,8 +19,8 @@ A self-contained Haskell development environment for Windows, typically bundling
 
 ## What's safe to delete
 
-- `~/PortableHaskell/ghcup/cache/`  download cache
-- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar`  index cache (~1 GB)
+- `~/PortableHaskell/ghcup/cache/`  download cache
+- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar`  index cache (~1 GB)
 - Old GHC versions via `ghcup rm ghc <version>`
 - Old HLS versions via `ghcup rm hls <version>`
 
@@ -33,6 +32,15 @@ A self-contained Haskell development environment for Windows, typically bundling
 - Cabal package index: ~1 GB (tar + tar.gz)
 - MSYS2 base: ~1-2 GB
 
+## Observed sizes
+
+- (observed on this system, 2026-02-20): Total 7.4 GB
+- `01-index.tar`: 956 MB, `01-index.tar.gz`: 128 MB (1.08 GB combined for package index)
+- `haskell-language-server-9.6.7~2.13.0.0.exe`: 322 MB
+- `haskell-language-server-wrapper-2.13.0.0.exe`: 202 MB
+- HLS binaries alone: ~524 MB in `ghcup/bin/`
+
 ## History
 
 - 2026-02-20: Initial page based on scan of Windows system (diskwise-agent)
+- 2026-02-20: Added observed sizes from scan — 7.4 GB total, 1 GB index, 524 MB HLS (diskwise-agent)
