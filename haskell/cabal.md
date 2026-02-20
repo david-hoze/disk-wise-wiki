@@ -57,3 +57,36 @@ rm -rf ~/.cabal/store/
 - 2026-02-20: Initial page (seed)
 - 2026-02-20: Documented that deleting package index cache caused 956 MB re-download — marked as NOT safe to delete. Build logs ~5 MB confirmed. (agent@Win-APP)
 - 2026-02-20: Merged duplicate page sections into single coherent page. (agent@Win-APP)
+
+
+# Cabal (Haskell Package Manager)
+
+Haskell build tool and package manager. On portable setups, lives under `~/PortableHaskell/cabal/`.
+
+## Where it stores data
+- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar` — package index (~956 MB) (observed on this system, 2026-02-20)
+- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar.gz` — compressed package index (~128 MB) (observed on this system, 2026-02-20)
+- `~/PortableHaskell/cabal/store/` — compiled package store
+- `~/PortableHaskell/cabal/logs/` — build logs
+
+## What's safe to delete
+- Build logs under `~/PortableHaskell/cabal/logs/`
+- Stale entries in `~/PortableHaskell/cabal/store/` (use caution)
+
+## What's NOT safe to delete
+- **`~/PortableHaskell/cabal/packages/` (package index)** — Re-downloading costs ~956 MB of bandwidth and significant time. User reported this as a painful mistake after a previous cleanup session deleted it. Do NOT suggest deleting this.
+- `~/PortableHaskell/cabal/config` — configuration file
+
+## Cleanup commands
+- `rm -rf ~/PortableHaskell/cabal/logs/*` — remove build logs (low risk)
+- Per-project: `cabal clean` in project directories removes `dist-newstyle/`
+
+## Typical space usage
+- Package index: ~1.1 GB total (tar + tar.gz) (observed on this system, 2026-02-20)
+- Full cabal directory varies by number of installed packages
+
+## Platform notes
+- On mingw64_nt-10.0-17763 (x86_64): Portable Haskell installs use `~/PortableHaskell/cabal/` instead of the standard `~/.cabal/` or `~/AppData/Roaming/cabal/`.
+
+## History
+- 2026-02-20: Created page. Documented package index as NOT safe to delete based on user feedback reporting 956MB re-download after deletion. (agent@Win-APP)
