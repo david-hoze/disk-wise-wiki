@@ -1,5 +1,4 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-<!-- diskwise-meta: {"last_verified":"2026-02-20T05:20:36Z","verify_count":1,"fail_count":0} -->
 # Cabal
 
 Cabal is the Haskell build tool and package manager.
@@ -54,3 +53,35 @@ rm -rf ~/.cabal/store/
 ## History
 
 - 2026-02-20: Initial page (seed)
+
+
+# Cabal (Haskell build tool)
+
+Cabal is the Haskell package manager and build system.
+
+## Where it stores data
+- `~/PortableHaskell/cabal/packages/hackage.haskell.org/` — package index and downloaded packages
+- `~/PortableHaskell/cabal/logs/` — build logs
+- `~/PortableHaskell/cabal/store/` — compiled package store
+
+## What's safe to delete
+- **Build logs** (`cabal/logs/`): ~5 MB typical (observed on this system, 2026-02-20). Low risk.
+
+## What's NOT safe to delete
+- **Package index cache** (`01-index.tar`, `01-index.tar.gz`): ~1.1 GB combined (observed on this system, 2026-02-20). Deleting this forces a full re-download of ~956 MB on next `cabal update`. A previous cleanup session deleted this and the user reported having to re-download 956 MB. **Do not recommend deleting this unless the user explicitly asks.** The re-download cost far outweighs the space savings.
+
+## Cleanup commands
+```bash
+# Safe: clear build logs only
+rm -rf ~/PortableHaskell/cabal/logs/*
+```
+
+## Typical space usage
+- Package index: ~1.1 GB (observed on this system, 2026-02-20)
+- Build logs: ~5 MB (observed on this system, 2026-02-20)
+
+## Platform notes
+- On mingw64_nt-10.0-17763 (x86_64): Cabal installed via ghcup under `~/PortableHaskell/cabal/` rather than the default `~/.cabal/` path.
+
+## History
+- 2026-02-20: Created page. Documented that deleting package index cache caused 956 MB re-download — marked as NOT safe to delete. Build logs ~5 MB confirmed. (agent@Win-APP)
