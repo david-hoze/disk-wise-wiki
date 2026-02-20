@@ -61,3 +61,33 @@ ghcup gc --ghc-old
 
 - 2026-02-20: Initial page (seed)
 - 2026-02-20: Removed duplicate diskwise-meta comment, added portable Windows cross-reference. (agent@Win-APP)
+
+
+# GHCup (Haskell Toolchain Manager)
+
+Manages GHC compiler and HLS (Haskell Language Server) installations.
+
+## Where it stores data
+- `~/PortableHaskell/ghcup/bin/` — installed tool binaries (HLS, GHC, etc.)
+- `~/PortableHaskell/ghcup/cache/` — downloaded archives
+
+## What's safe to delete
+- `~/PortableHaskell/ghcup/cache/*` — download cache, re-downloaded if needed
+
+## What's NOT safe to delete
+- `~/PortableHaskell/ghcup/bin/` — active tool binaries; do not remove without confirming versions are unused via `ghcup list`
+
+## Cleanup commands
+- `rm -rf ~/PortableHaskell/ghcup/cache/*` — clear download cache (low risk, 100% reliable across 2 sessions) (observed on this system, 2026-02-20)
+
+## Typical space usage
+- HLS binaries: ~322 MB per version (observed: haskell-language-server-9.6.7 at 322 MB) (observed on this system, 2026-02-20)
+- HLS wrapper: ~202 MB (observed on this system, 2026-02-20)
+- Cache: varies, often empty between updates
+
+## Platform notes
+- On mingw64_nt-10.0-17763 (x86_64): Uses `~/PortableHaskell/ghcup/` instead of `~/.ghcup/`.
+- User was confused by suggestion to "review unused GHC/HLS versions" — present this more clearly with exact `ghcup list` output if proposing version removal.
+
+## History
+- 2026-02-20: Created page with observed binary sizes and cache cleanup reliability data. (agent@Win-APP)
