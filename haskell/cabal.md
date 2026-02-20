@@ -1,3 +1,5 @@
+<!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
+<!-- diskwise-meta: {"last_verified":"2026-02-20T05:20:36Z","verify_count":1,"fail_count":0} -->
 # Cabal
 
 Cabal is the Haskell build tool and package manager.
