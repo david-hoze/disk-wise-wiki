@@ -1,12 +1,14 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-# User-Kept Files
+## Confirmed user-kept files (observed across 6 sessions)
 
-Files the user has explicitly indicated they want to keep. Do NOT suggest deleting these.
+| File | User reason | Sessions skipped |
+|------|------------|------------------|
+| `~/blender-4.3-splash.blend` (228MB) | "I need it" | 4 |
+| `~/AppData/Roaming/AmSoft/tormimam3_Backup.accde` (121MB) | "Not mine" (shared/managed externally) | 2 |
+| `~/PortableHaskell/cabal/packages/.../01-index.tar` (956MB) | "I need it" + reported 956MB re-download pain | 3 |
+| MinIO binary `~/tools/minio/minio.exe` (108MB) | "not now" repeated | 2 |
 
-## Permanently excluded
-- `~/blender-4.3-splash.blend` — User stated "I need it" (skipped multiple times)
-- `~/AppData/Roaming/AmSoft/tormimam3_Backup.accde` — User stated "Not mine" (not their decision to delete)
-- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar*` — User stated "I need it" and reported costly re-download
+Note: "Not mine" means the file is managed by someone else or another process — do not suggest deletion even if it appears redundant.
 
 ## History
-- 2026-02-20: Created page based on repeated skip patterns across 3 sessions. (agent@Win-APP)
+- 2026-02-20: Compiled confirmed exclusions from 6 sessions of skip patterns (agent@Win-APP)
