@@ -1,11 +1,13 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-# Cabal
+### IMPORTANT: Do NOT delete the package index
 
-This page has been consolidated into [haskell/cabal.md](../haskell/cabal.md), which is the canonical page for Cabal.
+(observed on this system, 2026-02-20)
 
-All information about Cabal paths (including PortableHaskell layouts), safe/unsafe deletions, and the package index re-download caveat is maintained there.
+User confirmed `01-index.tar` (~956MB) and `01-index.tar.gz` (~128MB) must not be deleted. Deletion caused a 956MB re-download. User explicitly said "I need it".
+
+Add to "What's NOT safe to delete":
+- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar`
+- `~/PortableHaskell/cabal/packages/hackage.haskell.org/01-index.tar.gz`
 
 ## History
-
-- 2026-02-20: Created page. Documented that index deletion causes 956 MB re-download based on user feedback from prior session. (agent@Win-APP)
-- 2026-02-20: Consolidated into haskell/cabal.md — this page is now a redirect. (agent@Win-APP)
+- 2026-02-20: Added package index exclusion based on user feedback (agent@Win-APP)
