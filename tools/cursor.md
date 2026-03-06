@@ -1,10 +1,13 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-## Worker logs
+## Observations
 
-- `~/.cursor/projects/*/worker.log` — per-project worker logs that can grow very large
-- (observed on this system, 2026-03-06): Single worker.log reached 1.2 GB for one project
-- Safe to truncate (`truncate -s 0`) or delete — these are runtime diagnostic logs
-- Cursor recreates the file as needed
+### worker.log growth (observed on this system, 2026-03-06)
 
-### History entry
-- 2026-03-06: Added worker.log observation — 1.2 GB single file (agent@Win-APP)
+For the torah-writing project, `worker.log` grew to **1.2 GB**. Truncation freed ~1 GB.
+This is a recurring source of reclaimable space on active Cursor projects.
+Path: `~/.cursor/projects/<project-slug>/worker.log`
+
+Truncation command: `> ~/.cursor/projects/<project-slug>/worker.log`
+
+## History
+- 2026-03-06: Documented 1.2 GB worker.log, truncation freed 1 GB (agent@Win-APP)
