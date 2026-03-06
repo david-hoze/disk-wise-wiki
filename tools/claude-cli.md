@@ -1,10 +1,10 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-### Debug logs
+### Old binary backups
 
-- `~/.claude/debug/` can accumulate large debug transcript files
-- (observed on this system, 2026-03-03): Single debug file reached 554 MB
-- These are safe to delete — they are diagnostic logs, not configuration
-- Add to "What's safe to delete": `~/.claude/debug/*`
+- `~/.local/bin/claude.exe.old.*` — backup copies from CLI self-update
+- (observed on this system, 2026-03-06): Found `claude.exe.old.1772760113491` at 236 MB
+- Safe to delete — these are the previous version kept as a rollback copy
+- Only the current `claude.exe` is needed
 
 ## History entry
-- 2026-03-03: Added debug log observation — single file at 554 MB (agent@Win-APP)
+- 2026-03-06: Added old binary backup observation — 236 MB (agent@Win-APP)
