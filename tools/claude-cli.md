@@ -1,17 +1,16 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-## Observations
+## Old version accumulation
+Claude CLI keeps old versions in `~/.local/share/claude/versions/`. Each version is ~236 MB. Only the version matching `~/.local/bin/claude.exe` is needed.
 
-### Old binary backups may be hardlinks (observed on this system, 2026-03-06)
+- 2026-03-06: Found versions 2.1.69 and 2.1.70 both present (472 MB total, ~236 MB reclaimable). (observed on this system, 2026-03-06)
 
-The auto-update process creates `.old.<timestamp>` backup files next to `claude.exe`.
-On this system, `claude.exe.old.1772760113491` showed as 236 MB in `du` output,
-but deleting it freed **0 bytes**. This strongly suggests the old binary is a
-hardlink to the current binary or to a version in `~/.local/share/claude/versions/`,
-so the blocks are shared and deletion doesn't reclaim space until all links are removed.
-
-**Implication:** Don't propose deleting `.old` Claude CLI backups as a space-saving
-measure unless you verify the link count first (`stat -c %h ~/.local/bin/claude.exe.old.*`).
-If link count > 1, deletion frees 0 bytes.
+### Cleanup
+```bash
+# List versions and remove old ones (keep the latest)
+ls -la ~/.local/share/claude/versions/
+# Remove specific old version:
+rm -rf ~/.local/share/claude/versions/2.1.69
+```
 
 ## History
-- 2026-03-06: Documented that .old backup deletion freed 0 B despite 236 MB apparent size — likely hardlink (agent@Win-APP)
+- 2026-03-06: Documented old version accumulation pattern (agent@Win-APP)
