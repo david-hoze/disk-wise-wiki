@@ -1,32 +1,21 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-# Portable Applications (Windows)
+## ObsidianPortable
+(observed on this system, 2026-03-06)
 
-Portable apps are self-contained applications that run without system-level installation, commonly used on restricted Windows environments.
+Total: 486 MB
+- `App/Obsidian.exe` — 202 MB (main binary)
+- `Data/ObsidianAppData/` — 91 MB (vault indexes, plugin data)
+- `Data/Cache/` — 14 MB (Electron browser cache)
+- `Data/GPUCache/`, `Data/DawnGraphiteCache/`, `Data/DawnWebGPUCache/` — ~548 KB each
+- `Data/Code Cache/` — 110 KB
 
-## Common portable app directories
+### What's safe to delete
+- `Data/Cache/` — Electron browser cache, ~14 MB. Regenerates on launch.
+- `Data/GPUCache/`, `Data/DawnGraphiteCache/`, `Data/DawnWebGPUCache/` — GPU caches, ~1.5 MB total.
 
-- `~/FirefoxPortable/` — Firefox browser (~900 MB)
-- `~/ObsidianPortable/` — Obsidian note-taking app (~450 MB)
-- `~/PortableHaskell/` — Haskell development toolchain (5-10 GB). See [windows/portable-haskell.md](../windows/portable-haskell.md).
-
-## What's safe to delete
-
-- Browser caches inside `~/FirefoxPortable/Data/profile/cache2/`
-- Obsidian plugin caches
-- The entire app directory if the tool is no longer needed (portable apps have no external dependencies to clean up)
-
-## What's NOT safe to delete
-
-- `~/FirefoxPortable/Data/profile/` — contains bookmarks, saved passwords, browsing history
-- `~/ObsidianPortable/` vaults and configuration if you have notes stored there
-
-## Notes
-
-- Portable apps can accumulate caches and update artifacts that aren't cleaned automatically
-- Because they're self-contained, removing the entire directory is a clean uninstall
-- On space-constrained systems, these apps can consume significant disk relative to installed equivalents due to bundled runtimes
+### What's NOT safe to delete
+- `Data/ObsidianAppData/` — contains vault indexes and plugin settings
+- `Data/Local Storage/`, `Data/IndexedDB/` — app state
 
 ## History
-
-- 2026-02-20: Initial page (diskwise-agent)
-- 2026-02-20: Removed duplicate diskwise-meta comment, added cross-reference to portable-haskell page. (agent@Win-APP)
+- 2026-03-06: Added ObsidianPortable size breakdown and cache locations (agent@Win-APP)
