@@ -1,13 +1,9 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-## Diminishing Returns on Repeated Cache Cleaning
-(observed on this system, 2026-02-20)
-
-After 7 sessions of regular cleanup, the following caches consistently yield 0 B:
-- `~/FirefoxPortable/Data/profile/cache2/*` — 0 B in last session (cleaned 3 times total)
-- `~/PortableHaskell/ghcup/cache/*` — 0 B in last session (cleaned 3 times total)
-- `~/PortableHaskell/cabal/logs/*` — 28 KB in last session
-
-These caches accumulate slowly between sessions. On a system cleaned weekly, expect near-zero returns from re-cleaning browser and tool caches. The bulk of reclaimable space on this system is in build artifacts (dist-newstyle) and large binaries, not caches.
+## Session 2026-03-06 observations
+- Windows temp (AppData/Local/Temp): reported 2.5 GB, actually freed 88 MB (locked files)
+- Gemini CLI (~/.gemini/): 50 MB (mostly tmp/)
+- Claude CLI old versions (~/.local/share/claude/versions/): 236 MB per version
+- Test/experiment dirs with blender splash duplicates: ~395 MB each (4 removed this session)
 
 ## History
-- 2026-02-20: Added diminishing returns observations from 7-session pattern (agent@Win-APP)
+- 2026-03-06: Added session observations (agent@Win-APP)
