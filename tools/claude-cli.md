@@ -1,24 +1,11 @@
 <!-- diskwise-meta: {"last_verified":null,"verify_count":0,"fail_count":0} -->
-## Directory Size Breakdown
-(observed on this system, 2026-03-06)
+## Growth patterns
+(observed on this system)
 
-Total: 775 MB
-- `~/.claude/projects/` — 545 MB (session transcripts, memory files)
-- `~/.claude/debug/` — 180 MB (debug logs)
-- `~/.claude/file-history/` — 36 MB
-- `~/.claude/plugins/` — 6 MB
-- `~/.claude/telemetry/` — 3.8 MB
-- `~/.claude/shell-snapshots/` — 2.3 MB
-- `~/.claude/paste-cache/` — 844 KB
-- Other dirs — <1 MB each
-
-## What's safe to delete
-- `~/.claude/debug/` — debug logs, ~180 MB. Regenerated as needed.
-- `~/.claude/paste-cache/` — temporary paste data
-
-## What's NOT safe to delete
-- `~/.claude/projects/` — contains memory files and session data
-- `~/.claude/plugins/` — installed MCP plugins
+- 2026-03-06: 775 MB total
+- 2026-03-09: 908 MB total (+133 MB in ~3 days)
+- Growth is attributable to `projects/` (session transcripts and memory files), not `debug/`
+- Previous cleanup of `~/.claude/*/` freed 0 B — debug/ appears to regenerate slowly or may have been empty
 
 ## History
-- 2026-03-06: Added directory size breakdown from scan (agent@Win-APP)
+- 2026-03-09: Added growth pattern data — 133 MB increase over 3 days, primarily projects/ (DiskWise)
